@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy</title>
+  <link rel="icon" href="favico.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CDN -->
+  <style>
+    /* Sky gradient background */
+    .sky-background {
+      background: linear-gradient(to bottom, #2966b6, #B0E0E6);
+    }
+    /* Gradient text for logo */
+    .gradient-text {
+      background: linear-gradient(to bottom, white, #C4CBFFFF);
+      -webkit-background-clip: text;
+      color: transparent;
+      filter: drop-shadow(1px 1px 5px #000000);
+    }
+    /* For hiding the header when scrolling down */
+    .hidden-header {
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="sky-background min-h-screen">
+
+  <!-- Header (App Bar) -->
+  <header id="header" class="flex justify-between items-center p-4 bg-transparent fixed top-0 left-0 right-0 z-10 shadow-md">
+    <!-- Logo Text with Gradient -->
+    <div class="flex items-center space-x-4">
+      <!-- Placeholder for Game Logo Image -->
+      <img src="animgelg.png" alt="Game Logo" class="w-12 h-12 object-cover">
+      <!-- Gradient Logo Text -->
+      <h1 class="text-4xl font-bold gradient-text leading-normal">Animgels</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 py-20 pt-28">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Privacy Policy</h1>
+
+      <ul class="space-y-6">
+        <!-- Information We Collect Section -->
+        <li>
+          <h2 class="text-2xl font-semibold text-gray-700">Information We Collect</h2>
+          <p class="text-gray-600">
+            We do not collect any personal information that can identify you.
+          </p>
+          <p class="text-gray-600">
+            We collect information about your interactions with our game.
+          </p>
+        </li>
+
+        <!-- How We Use Your Information Section -->
+        <li>
+          <h2 class="text-2xl font-semibold text-gray-700">How We Use Your Information</h2>
+          <p class="text-gray-600">
+            To provide, maintain, balance and improve our game experience.
+          </p>
+        </li>
+
+        <!-- Advertising Section -->
+        <li>
+          <h2 class="text-2xl font-semibold text-gray-700">Advertising</h2>
+          <p class="text-gray-600">
+            There are no forced Ads on our app. All Ads are served by user request.
+          </p>
+          <p class="text-gray-600">
+            We use AdMob by Google to display advertisements in our game. AdMob may collect information about your device and usage to deliver personalized ads. You have the option to opt out of personalized ads. For more information, visit the AdMob <a href="https://policies.google.com/privacy" class="text-blue-500">Privacy Policy</a>.
+          </p>
+        </li>
+
+        <!-- Children Section -->
+        <li>
+          <h2 class="text-2xl font-semibold text-gray-700">Children</h2>
+          <p class="text-gray-600">
+            These services do not address anyone under the age of 13.
+          </p>
+          <p class="text-gray-600">
+            We do not knowingly collect any personal information from anyone under the age of 13. If you believe that we might have any information from or about a child under the age set out below, please contact us.
+          </p>
+          <p class="text-gray-600">
+            In the event that we learn that we have collected personal information from a child under the relevant age, we will delete that information as quickly as possible.
+          </p>
+        </li>
+
+        <!-- Contact Us Section -->
+        <li>
+          <h2 class="text-2xl font-semibold text-gray-700">Contact Us</h2>
+          <p class="text-gray-600">
+            We may update this Privacy Policy from time to time.
+          </p>
+          <p class="text-gray-600">
+            If you have any questions about our privacy policy please contact us at <a href="mailto:support@animgels.com" class="text-blue-500">support@animgels.com</a>.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white p-4 text-center text-gray-700 mt-12">
+    <p>&copy; <span id="year"></span> Animgels. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Update year dynamically
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // JavaScript to hide header when scrolling down and show it when scrolling up
+    let lastScrollTop = 0;
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", function() {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (currentScroll > lastScrollTop) {
+        // Scrolling down
+        header.classList.add("hidden-header");
+      } else {
+        // Scrolling up
+        header.classList.remove("hidden-header");
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll
+    });
+  </script>
+
+</body>
+</html>
