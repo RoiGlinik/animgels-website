@@ -5,25 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy</title>
   <link rel="icon" href="favico.png" type="image/png">
+  <link rel="stylesheet" href="common.css">
   <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CDN -->
-  <style>
-    /* Sky gradient background */
-    .sky-background {
-      background: linear-gradient(to bottom, #2966b6, #B0E0E6);
-    }
-    /* Gradient text for logo */
-    .gradient-text {
-      background: linear-gradient(to bottom, white, #C4CBFFFF);
-      -webkit-background-clip: text;
-      color: transparent;
-      filter: drop-shadow(2px 3px 5px #000000);
-    }
-    /* For hiding the header when scrolling down */
-    .hidden-header {
-      transform: translateY(-100%);
-      transition: transform 0.3s ease;
-    }
-  </style>
 </head>
 <body class="sky-background min-h-screen">
 
@@ -35,6 +18,7 @@
       <img src="animgelg.png" alt="Game Logo" class="w-12 h-12 object-cover">
       <!-- Gradient Logo Text -->
       <h1 class="text-4xl font-bold gradient-text leading-normal">Animgels</h1>
+      
     </div>
   </header>
 
@@ -102,9 +86,41 @@
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="bg-white p-4 text-center text-gray-700 mt-12">
-    <p>&copy; <span id="year"></span> Animgels. All rights reserved.</p>
+  <!-- Modern Footer -->
+  <footer class="bg-gray-100 border-t mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-10 md:flex md:justify-between md:items-center text-gray-700">
+      
+      <!-- Logo + Name -->
+      <div class="flex items-center space-x-3 mb-6 md:mb-0">
+        <img src="animgelg.png" alt="Animgels Logo" class="w-10 h-10 object-cover">
+        <span class="font-bold text-lg">Animgels</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="flex flex-col md:flex-row items-start md:items-center gap-4 text-sm">
+        <li>
+          <a href="elements/" class="hover:text-blue-500 transition">Game Elements</a>
+        </li>
+      </ul>
+
+      <!-- Social Links -->
+      <div class="flex gap-4 mt-6 md:mt-0">
+        <a href="https://www.facebook.com/profile.php?id=61575295396061" target="_blank" class="text-gray-600 hover:text-blue-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5 3.657 9.127 8.438 9.878v-6.988H7.898v-2.89h2.54V9.797c0-2.506 1.493-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.462h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33V21.88C18.343 21.127 22 17 22 12z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@Animgels" target="_blank" class="text-gray-600 hover:text-red-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.615 3.184c-1.723-.468-8.494-.468-8.494-.468s-6.77 0-8.494.468C1.354 3.661 1 6.287 1 8.996v6.008c0 2.71.354 5.336 1.627 5.812C4.35 21.284 11.121 21.284 11.121 21.284s6.77 0 8.494-.468C22.646 20.34 23 17.714 23 15.004V8.996c0-2.71-.354-5.336-1.627-5.812zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="text-center text-sm text-gray-500 pb-4">
+      &copy; <span id="year"></span> Animgels. All rights reserved.
+    </div>
   </footer>
 
   <script>

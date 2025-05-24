@@ -1,0 +1,77 @@
+/* Sky gradient background */
+.sky-background {
+    background: linear-gradient(to bottom, #2966b6, #B0E0E6);
+    }
+
+
+/* For hiding the header when scrolling down */
+.hidden-header {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    }
+
+/* Gradient text for logo */
+.gradient-text {
+    background: linear-gradient(to bottom, white, #C4CBFFFF);
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: drop-shadow(2px 3px 5px #000000);
+    }
+
+.elements-image {
+    width: 64px;
+    height: 64px;
+}
+
+.sprite {
+    background-image: url('sprite-web.png'); 
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+}
+
+.animgelr { background-position: -320px 0px; }
+.animgelg { background-position: -192px 0px; }
+.animgelb { background-position: -128px 0px; }
+.animgely { background-position: -64px 0px; }
+.animgelp { background-position: -256px 0px; }
+.airballoon { background-position: -384px 0px; }
+.food-bag { background-position: -448px 0px; }
+
+.dog { background-position: -64px -64px; }
+.elephant { background-position: -128px -64px; }
+.bird { background-position: -0px -64px; }
+.pig { background-position: -256px -64px; }
+.frog { background-position: -194px -64px; }
+.bomb { background-position: -320px -64px; }
+.candy2 { background-position: -384px -64px; }
+
+
+.animal-food { background-position: 0px -128px; }
+.wood { background-position: -64px -128px; }
+.wood1 { background-position: -128px -128px; }
+.wood2 { background-position: -192px -128px; }
+.wood3 { background-position: -256px -128px; }
+.wood4 { background-position: -320px -128px; }
+.stone { background-position: -384px -128px; }
+.shield { background-position: 0px -1240px; }
+
+
+.candy { background-position: 0px -192px; }
+.candyp { background-position: -64px -192px; }
+.candyg { background-position: -128px -192px; }
+.candyb { background-position: -192px -192px; }
+.candyr { background-position: -256px -192px; }
+.candyy { background-position: -320px -192px; }
+.candy-box { background-position: -384px -192px; }
+
+
+.devil { background-position: 0px -256px; }
+.devil1 { background-position: -64px -256px; }
+.devil2 { background-position: -128px -256px; }
+
+
+
+.fireworkh { background-position: 0px -320px; }
+.fireworkv { background-position: -192px -320px; }
+
