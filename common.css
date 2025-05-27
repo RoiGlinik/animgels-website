@@ -23,11 +23,19 @@
     height: 64px;
 }
 
+@media (max-width: 768px) {
+    .sprite {
+      scale: 0.65; /* scale down for mobile */
+    }
+}
+
 .sprite {
     background-image: url('sprite-web.png'); 
     background-repeat: no-repeat;
     width: 64px;
     height: 64px;
+
+
 }
 
 .animgelr { background-position: -320px 0px; }

@@ -10,7 +10,7 @@
 </head>
 <body class="sky-background min-h-screen">
 
-  <header class="flex justify-between items-center p-4 bg-transparent fixed top-0 left-0 right-0 z-10 shadow-md">
+  <header id="header" class="flex justify-between items-center p-4 bg-transparent fixed top-0 left-0 right-0 z-10 shadow-md">
     <div class="flex items-center space-x-4">
       <img src="../animgelg.png" alt="Game Logo" class="w-12 h-12 object-cover">
       <h1 class="text-4xl font-bold gradient-text leading-normal">Animgels</h1>
@@ -20,168 +20,133 @@
   <main class="container mx-auto pt-28 px-4">
     <h1 class="text-3xl font-bold text-center text-white mb-8">Game Elements</h1>
 
-    <div class="overflow-x-auto bg-white p-6 rounded-lg shadow-lg">
+    <div class="overflow-x-auto bg-white p-1 rounded-lg shadow-lg">
       <table class="min-w-full text-md">
         <thead class="bg-blue-800 text-white">
           <tr>
             <th class="p-3 text-left">Image</th>
-            <th class="p-3 text-left">Name</th>
-            <th class="p-3 text-left">First Appearance</th>
             <th class="p-3 text-left">Properties</th>
           </tr>
         </thead>
         <tbody class=" bg-gray-200 text-gray-700">
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite dog"></div><div class="sprite elephant"></div><div class="sprite bird"></div><div class="sprite pig"></div> <div class="sprite frog"></div></td>
-            <td class="p-3 font-bold text-blue-700">Animals</td>
-            <td class="p-3 text-md">
-            </td>
-            <td class="p-3">Basic elements of the game. <br>Combine 4 or 5 animals to create Animgles of the same color.</td>
+            <td class="p-3"><span class=" font-bold text-blue-700">Animals</span><br> Basic elements of the game. <br>Combine 4 or 5 animals to create Animgles of the same color.</td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite animgelr"></div><div class="sprite animgelg"></div><div class="sprite animgelb"></div><div class="sprite animgely"></div><div class="sprite animgelp"></div></td>
-            <td class="p-3 font-bold text-blue-700">Animgels</td>
-            <td class="p-3 text-md">
-            </td>
-            <td class="p-3">Animgels unleash powerful attacks <br> Pink and Green strike in a 3×3 area. <br> Blue and Red clear full lines horizontally or vertically. <br> Yellow cuts through the board in an X-shaped blast. </td>
+            <td class="p-3"><span class=" font-bold text-blue-700">Animgels</span><br> unleash powerful attacks <br> Pink and Green strike in a 3×3 area. <br> Blue and Red clear full lines horizontally or vertically. <br> Yellow cuts through the board in an X-shaped blast. </td>
           </tr>
-
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite wood"></div><div class="sprite wood1"></div><div class="sprite wood2"></div><div class="sprite wood3"></div><div class="sprite wood4"></div></td>
-            <td class="p-3 font-bold text-blue-700">Wood</td>
-            <td class="p-3 text-md">
-              <ul class="list-disc list-inside">
+            <td class="p-3"><span class=" font-bold text-blue-700">Wood</span><br> The basic blocker of the game. <br> Unmoveable. <br> Cleared with Adjacent matches. <br> Maximum of 5 layers.
+                  <ul class="list-disc list-inside">
                 <li> Level 2 </li>
               </ul>
-            </td>
-            <td class="p-3">The basic blocker of the game. <br> Unmoveable. <br> Cleared with Adjacent matches. <br> Maximum of 5 layers. </td> 
+            </td> 
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite animal-food"></td>
-            <td class="p-3 font-bold text-blue-700">Animal Food</td>
-            <td class="p-3 text-md">
+            <td class="p-3"><span class=" font-bold text-blue-700">Animal Food</span><br>  Moveable. <br> Cleared by adjacent hit. <br> Blocks Special Power.
               <ul class="list-disc list-inside">
                 <li> Level 14 </li>
               </ul>
             </td>
-            <td class="p-3">Moveable. <br> Cleared by adjacent hit. <br> Blocks Special Power.</td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite food-bag"></td>
-            <td class="p-3 font-bold text-blue-700">Food Bag</td>
-            <td class="p-3 text-md">
+            <td class="p-3"><span class=" font-bold text-blue-700">Food Bag</span><br> Moveable. <br> Cleared by adjacent hit. <br> Creates animal food when destroyed.
               <ul class="list-disc list-inside">
                 <li> To be revealed. </li>
               </ul>
             </td>
-            <td class="p-3">Moveable. <br> Cleared by adjacent hit. <br> Creates animal food when destroyed.</td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite airballoon"></td>
-            <td class="p-3 font-bold text-blue-700">Air balloon</td>
-            <td class="p-3 text-md">
+            </td>
+            <td class="p-3"><span class=" font-bold text-blue-700">Air balloon</span><br> Moveable. <br> Indestructible. <br> Air ballons are a collectable element, drop them to the lowest availble cell in a column and clear any blocker in that cell.
               <ul class="list-disc list-inside">
                 <li> Level 15 </li>
-              </ul>
+              </ul>            
             </td>
-            <td class="p-3">Moveable. <br> Indestructible. <br> Air ballons are a collectable element, drop them to the lowest availble cell in a column and clear any blocker in that cell.</td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite stone"></div></td>
-            <td class="p-3 font-bold text-blue-700">Stone</td>
-            <td class="p-3 text-md">
+            <td class="p-3"><span class=" font-bold text-blue-700">Stone</span><br> Unmoveable. <br> Requires Special power hit to be cleaered. 
               <ul class="list-disc list-inside">
                 <li> Level 21 </li>
-              </ul>
+              </ul>            
             </td>
-            <td class="p-3">Unmoveable. <br> Requires Special power hit to be cleaered. </td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite candy"></div><div class="sprite candy2"></div></td>
-            <td class="p-3 font-bold text-blue-700">multicolored Candies</td>
-            <td class="p-3 text-md">
+            <td class="p-3"><span class=" font-bold text-blue-700">multicolored Candies</span><br> Moveable blocker. <br> Cleared with adjcanet hit from animals. <br> Maximum of 2 layers. 
               <ul class="list-disc list-inside">
                 <li> Level 21</li>
-              </ul>
+              </ul>            
             </td>
-            <td class="p-3">Moveable blocker. <br> Cleared with adjcanet hit from animals. <br> Maximum of 2 layers. </td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"></div><div class="sprite candyr"></div><div class="sprite candyg"></div><div class="sprite candyb"></div><div class="sprite candyy"></div><div class="sprite candyp"></div></td>
-            <td class="p-3 font-bold text-blue-700">Candies</td>
-            <td class="p-3 text-md">
+            <td class="p-3"><span class=" font-bold text-blue-700">Candies</span><br> Moveable blocker. <br>  Colored candies require adjacent hit from animals of the same color <br> — making them a tougher version of their multicolored counterparts.
               <ul class="list-disc list-inside">
                 <li> Level 21</li>
-              </ul>
+              </ul>            
             </td>
-            <td class="p-3">Moveable blocker. <br>  Colored candies require adjacent hit from animals of the same color <br> — making them a tougher version of their multicolored counterparts.</td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite candy-box"></div></td>
-            <td class="p-3 font-bold text-blue-700">Candy Box</td>
-            <td class="p-3 text-md">
+            <td class="p-3"><span class=" font-bold text-blue-700">Candy Box</span><br> Unmoveable. <br> Adjacent hit or special hits will collect a candy. <br> Currently they are Indestructible and permanent.
               <ul class="list-disc list-inside">
                 <li> Level 87 </li>
-              </ul>
+              </ul>            
             </td>
-            <td class="p-3">Unmoveable. <br> Adjacent hit or special hits will collect a candy. <br> Currently they are Indestructible and permanent.</td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite devil"></div><div class="sprite devil1"></div><div class="sprite devil2"></div></td>
-            <td class="p-3 font-bold text-blue-700">Animvels</td>
-            <td class="p-3 text-md">
+            <td class="p-3"><span class=" font-bold text-blue-700">Animvels</span><br>The Mischievous Animvils are the Animgles special enemies. <br> They are Unmoveable. <br> They are cleared with any hit or a swap with an Animgel. <br> Each turn they will transform an animal to a blocker (candy, wood or animal food.). <br> Animvles Can have up to 3 lives distinguished by their horns.
               <ul class="list-disc list-inside">
                 <li> Level 16 </li>
-              </ul>
+              </ul>            
             </td>
-            <td class="p-3">Mischievous Animvils are special enemies. <br> They are Unmoveable. <br> They are cleared with any hit or a swap with an Animgel. <br> Each turn they will transform an animal to a blocker (candy, wood or animal food.). <br> Animvles Can have up to 3 lives distinguished by their horns. </td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite bomb"></div></td>
-            <td class="p-3 font-bold text-blue-700">Rainbow Bomb</td>
-            <td class="p-3 text-md">
+            <td class="p-3"><span class=" font-bold text-blue-700">Rainbow Bomb</span><br> Move to activate bombs. <br> Strikes a 5×5 area. <br> Combine with animgels to trigger their powers.
             </td>
-            <td class="p-3">Move to activate bombs. <br> Strikes a 5×5 area. <br> Combine with animgels to trigger their powers.</td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div class="sprite fireworkh"></div><div class="sprite fireworkv"></div></td>
-            <td class="p-3 font-bold text-blue-700">Fireworks</td>
-            <td class="p-3 text-md">
-            </td>
-            <td class="p-3">Fireworks are helpers elements. <br> Moveable. <br> Adjacent hit to trigger a vertical or horizontal strike.</td>
+            <td class="p-3"><span class=" font-bold text-blue-700">Fireworks</span><br> Fireworks are helpers elements. <br> Moveable. <br> Adjacent hit to trigger a vertical or horizontal strike.</td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div><img class="elements-image" src="../cloud.png" alt="sleeping cat"></div></td>
-            <td class="p-3 font-bold text-blue-700">Cloud</td>
-            <td class="p-3 text-md">
+            <td class="p-3"><span class=" font-bold text-blue-700">Cloud</span><br> Clouds are tile blocker. <br> Cleared by a match at the cloud location. <br> Maximum of 3 layers. 
               <ul class="list-disc list-inside">
                 <li> Level 8 </li>
-              </ul>
+              </ul>            
             </td>
-            <td class="p-3">Clouds are tile blocker. <br> Cleared by a match at the cloud location. <br> Maximum of 3 layers. </td>
           </tr>
 
           <tr class="border-t hover:bg-blue-50">
             <td class="p-3"><div><img class="elements-image" src="../cat-sleep.png" alt="sleeping cat"></div></td>
-            <td class="p-3 font-bold text-blue-700">Sleeping Cat</td>
-            <td class="p-3 text-md">
+            <td class="p-3"><span class=" font-bold text-blue-700">Sleeping Cat</span><br> Sleeping cat is a unmoveable blocker. <br> The cat is triggered after 2 hits and moves to a random location while leaving food on his original location.
               <ul class="list-disc list-inside">
                 <li> To be revealed. </li>
-              </ul>
+              </ul>                        
             </td>
-            <td class="p-3">Sleeping cat is a unmoveable blocker. <br> The cat is triggered after 2 hits and moves to a random location while leaving food on his original location.</td>
           </tr>
 
         </tbody>
