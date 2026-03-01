@@ -7,6 +7,7 @@
 <link rel="icon" href="favico.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root {
     --sky1: #5b8dee;
@@ -73,6 +74,24 @@
     display:flex; gap:6px;
     background:rgba(255,255,255,0.2);
     border-radius:40px; padding:5px;
+  }
+  .mobile-menu-btn {
+    display:none;
+    border:1px solid rgba(255,255,255,0.45);
+    background:rgba(255,255,255,0.2);
+    color:white;
+    border-radius:10px;
+    width:38px;
+    height:38px;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .mobile-menu-btn svg {
+    width:20px;
+    height:20px;
+    fill:currentColor;
+    display:block;
   }
   .nav-tab {
     padding:7px 20px; border-radius:30px;
@@ -286,22 +305,37 @@
 
   @media (max-width: 768px) {
     nav {
-      padding: 8px 12px;
+      padding: 10px 12px;
+      min-height: 64px;
       height: auto;
-      gap: 8px;
-      flex-wrap: wrap;
+      gap: 10px;
+      flex-wrap: nowrap;
     }
-    .logo-text { font-size: 1.2rem; }
+    .logo {
+      flex: 1;
+      min-width: 0;
+    }
+    .logo-text { font-size: 1.15rem; }
+    .mobile-menu-btn {
+      display: inline-flex;
+    }
     .nav-tabs {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      top: calc(100% + 8px);
+      flex-direction: column;
       gap: 6px;
-      padding: 4px;
+      border-radius: 16px;
+      padding: 8px;
+      background: rgba(58, 106, 190, 0.95);
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+      z-index: 120;
     }
     .nav-tab {
       width: 100%;
-      text-align: center;
+      text-align: left;
       padding: 8px 8px;
       font-size: 0.8rem;
       white-space: nowrap;
@@ -361,16 +395,21 @@
 <body>
 
 <!-- NAV -->
-<nav id="topNav">
-    <a class="logo" href="#">
+<nav id="topNav" class="sticky top-0 z-[100] flex items-center justify-between gap-2 border-b border-white/35 bg-white/20 px-3 py-2 backdrop-blur-md transition-transform duration-300 md:h-16 md:px-8 md:py-0">
+    <a class="logo min-w-0 flex-1 md:flex-none" href="#">
     <div class="logo-icon">
       <img src="animgelg.png" alt="Animgels Logo">
     </div>
-    <span class="logo-text">Animgels</span>
+    <span class="logo-text truncate text-[1.15rem] md:text-[1.5rem]">Animgels</span>
   </a>
-  <div class="nav-tabs">
-    <button class="nav-tab active" onclick="switchTab('privacy', this)">🔒 Privacy Policy</button>
-    <button class="nav-tab" onclick="switchTab('elements', this)">🎮 Game Elements</button>
+  <button id="mobileMenuBtn" class="mobile-menu-btn md:hidden" aria-label="Open menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+    </svg>
+  </button>
+  <div id="navTabs" class="nav-tabs hidden absolute left-3 right-3 top-full z-[120] mt-2 flex-col gap-2 rounded-2xl border border-white/30 bg-[rgba(58,106,190,0.95)] p-2 shadow-xl md:static md:mt-0 md:flex md:flex-row md:items-center md:gap-1 md:rounded-full md:border-0 md:bg-white/20 md:p-1 md:shadow-none">
+    <button class="nav-tab active" onclick="switchTab('privacy', this)">Privacy Policy</button>
+    <button class="nav-tab" onclick="switchTab('elements', this)">Game Elements</button>
   </div>
 </nav>
 
@@ -563,6 +602,36 @@ const heroContent = {
   privacy:  { badge: "Privacy Policy", title: "Your privacy,<br>our promise", sub: "Simple, honest, and player-first - here's how we handle your data." },
   elements: { badge: "Game Elements", title: "Game elements,<br>at a glance", sub: "All units from the original elements page, grouped for easier scanning." }
 };
+const topNav = document.getElementById('topNav');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navTabs = document.getElementById('navTabs');
+
+function closeMobileMenu() {
+  navTabs.classList.add('hidden');
+  mobileMenuBtn.setAttribute('aria-expanded', 'false');
+}
+
+mobileMenuBtn.addEventListener('click', () => {
+  const willOpen = navTabs.classList.contains('hidden');
+  navTabs.classList.toggle('hidden', !willOpen);
+  mobileMenuBtn.setAttribute('aria-expanded', String(willOpen));
+});
+
+document.addEventListener('click', (event) => {
+  if (!topNav.contains(event.target)) {
+    closeMobileMenu();
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    navTabs.classList.remove('hidden');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+  } else {
+    closeMobileMenu();
+  }
+});
+
 function switchTab(tab, btn) {
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
@@ -572,12 +641,12 @@ function switchTab(tab, btn) {
   document.getElementById('heroBadge').textContent = c.badge;
   document.getElementById('heroTitle').innerHTML = c.title;
   document.getElementById('heroSub').textContent = c.sub;
+  closeMobileMenu();
 }
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Hide nav when scrolling down, show when scrolling up, and always show near top.
-const topNav = document.getElementById('topNav');
 let lastScrollY = window.scrollY;
 window.addEventListener('scroll', () => {
   const currentY = window.scrollY;
