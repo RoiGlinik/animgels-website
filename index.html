@@ -1,162 +1,681 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy</title>
-  <link rel="icon" href="favico.png" type="image/png">
-  <link rel="stylesheet" href="common.css">
-  <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CDN -->
-  <script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init Re Ms Fs Pe Rs Cs capture Ve calculateEventProperties Ds register register_once register_for_session unregister unregister_for_session zs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ls As createPersonProfile Ns Is Us opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing is_capturing clear_opt_in_out_capturing Os debug I js getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_z3qkhdeDjF4eTCNmn427x9oPLUxQcTD0aows2n2i1mc', {
-        api_host: 'https://eu.i.posthog.com',
-        defaults: '2025-05-24',
-        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
-    })
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animgels - Privacy Policy</title>
+<link rel="icon" href="favico.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --sky1: #5b8dee;
+    --sky2: #7ec8e3;
+    --sky3: #b8e0f7;
+    --green: #4ecb71;
+    --white: #ffffff;
+    --card: #ffffffee;
+    --text: #1a2744;
+    --muted: #5a7098;
+    --radius: 24px;
+    --shadow: 0 8px 32px rgba(30,60,120,0.13);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text);
+    background: linear-gradient(160deg, #4a7de8 0%, #6baed6 40%, #a8d8ea 70%, #ceeaf7 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  #particles-layer {
+    pointer-events: none;
+  }
+  .particle-item {
+    position: absolute;
+    opacity: 0;
+    will-change: transform, opacity;
+    animation-name: particleLife;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  @keyframes particleLife {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.35) rotate(0deg);
+    }
+    20% {
+      opacity: var(--particle-opacity, 0.8);
+      transform: translate(0, 0) scale(1) rotate(10deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--dx, 0px), var(--dy, 0px)) scale(0.35) rotate(var(--rot, 90deg));
+    }
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(16px);
+    background: rgba(255,255,255,0.18);
+    border-bottom: 1px solid rgba(255,255,255,0.35);
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.28s ease, background 0.2s ease;
+  }
+  nav.nav-hidden {
+    transform: translateY(calc(-100% - 6px));
+  }
+  .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .logo-icon {
+    width:38px; height:38px;
+    border-radius:10px;
+    overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .logo-icon img {
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .logo-text {
+    font-family:'Baloo 2',sans-serif;
+    font-size:1.5rem; font-weight:800;
+    color:white;
+    text-shadow:0 2px 8px rgba(0,0,0,0.15);
+    letter-spacing:0.02em;
+  }
+  .nav-tabs {
+    display:flex; gap:6px;
+    background:rgba(255,255,255,0.2);
+    border-radius:40px; padding:5px;
+  }
+  .mobile-menu-btn {
+    display:none;
+    border:1px solid rgba(255,255,255,0.45);
+    background:rgba(255,255,255,0.2);
+    color:white;
+    border-radius:10px;
+    width:38px;
+    height:38px;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .mobile-menu-btn svg {
+    width:20px;
+    height:20px;
+    fill:currentColor;
+    display:block;
+  }
+  .nav-tab {
+    padding:7px 20px; border-radius:30px;
+    font-weight:700; font-size:0.88rem;
+    cursor:pointer; color:white;
+    transition:all 0.25s;
+    border:none; background:transparent;
+    letter-spacing:0.02em;
+  }
+  .nav-tab.active, .nav-tab:hover {
+    background:white; color:var(--sky1);
+    box-shadow:0 2px 12px rgba(0,0,0,0.12);
+  }
+
+  /* HERO */
+  .hero {
+    position:relative; z-index:1;
+    text-align:center;
+    padding:60px 20px 40px;
+  }
+.hero h1 {
+    font-family:'Baloo 2',sans-serif;
+    font-size:clamp(2.2rem,5vw,3.4rem);
+    font-weight:800; color:white;
+    text-shadow:0 4px 20px rgba(0,0,0,0.15);
+    line-height:1.1; margin-bottom:12px;
+  }
+  .hero p {
+    color:rgba(255,255,255,0.85);
+    font-size:1.05rem; font-weight:600;
+    max-width:560px; margin:0 auto;
+  }
+
+  /* MAIN */
+  main {
+    position:relative; z-index:1;
+    max-width:980px; margin:0 auto;
+    padding:0 20px 60px;
+  }
+  .section { display:none; }
+  .section.active { display:block; }
+
+  /* CARDS */
+  .card {
+    background:var(--card);
+    backdrop-filter:blur(12px);
+    border-radius:var(--radius);
+    padding:32px 36px; margin-bottom:20px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(255,255,255,0.7);
+    animation:slideUp 0.4s ease both;
+  }
+  @keyframes slideUp {
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .card:nth-child(2){animation-delay:0.05s}
+  .card:nth-child(3){animation-delay:0.10s}
+  .card:nth-child(4){animation-delay:0.15s}
+  .card:nth-child(5){animation-delay:0.20s}
+
+  .card-header { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+  .card-icon {
+    width:44px; height:44px; border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px; flex-shrink:0;
+  }
+  .icon-blue   { background:linear-gradient(135deg,#5b8dee,#7ec8e3); }
+  .icon-green  { background:linear-gradient(135deg,#4ecb71,#2ecc71); }
+  .icon-yellow { background:linear-gradient(135deg,#ffd166,#f4a020); }
+  .icon-pink   { background:linear-gradient(135deg,#ff6b9d,#e040fb); }
+  .icon-purple { background:linear-gradient(135deg,#9b59b6,#6c3483); }
+
+  .card h2 {
+    font-family:'Baloo 2',sans-serif;
+    font-size:1.2rem; font-weight:800;
+    color:var(--text); letter-spacing:0.01em;
+  }
+  .card p, .card li {
+    font-size:0.95rem; line-height:1.75;
+    color:var(--muted); font-weight:600;
+  }
+  .card a { color:var(--sky1); font-weight:700; text-decoration:none; }
+  .card a:hover { text-decoration:underline; }
+  .card ul { padding-left:20px; }
+  .card li { margin-bottom:4px; }
+
+  /* ELEMENTS */
+  .elements-intro { text-align:center; padding:10px 0 24px; }
+  .elements-intro h2 {
+    font-family:'Baloo 2',sans-serif;
+    font-size:1.6rem; font-weight:800; color:white;
+    margin-bottom:6px; text-shadow:0 2px 10px rgba(0,0,0,0.15);
+  }
+  .elements-intro p { color:rgba(255,255,255,0.85); font-weight:600; font-size:0.95rem; }
+
+  .category-label {
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800; font-size:1.1rem; color:white;
+    text-shadow:0 2px 8px rgba(0,0,0,0.15);
+    margin:26px 0 12px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .category-label::after {
+    content:''; flex:1; height:2px;
+    background:rgba(255,255,255,0.3); border-radius:2px;
+  }
+
+  .elements-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(240px,1fr));
+    gap:14px;
+    margin-bottom:16px;
+  }
+  .element-card {
+    background:var(--card);
+    border-radius:20px;
+    padding:16px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(255,255,255,0.7);
+    animation:slideUp 0.35s ease both;
+  }
+  .element-sprites {
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px;
+    margin-bottom:10px;
+    min-height:68px;
+    align-items:center;
+  }
+  .element-name {
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:1rem;
+    color:var(--text);
+    margin-bottom:6px;
+  }
+  .element-desc {
+    font-size:0.86rem;
+    color:var(--muted);
+    font-weight:700;
+    line-height:1.5;
+  }
+  .element-desc ul {
+    padding-left:18px;
+    margin-top:6px;
+  }
+
+  .sprite {
+    background-image:url('sprite-web.png');
+    background-repeat:no-repeat;
+    width:64px;
+    height:64px;
+    display:inline-block;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.45));
+  }
+  .animgelr { background-position: -320px 0px; }
+  .animgelg { background-position: -192px 0px; }
+  .animgelb { background-position: -128px 0px; }
+  .animgely { background-position: -64px 0px; }
+  .animgelp { background-position: -256px 0px; }
+  .airballoon { background-position: -384px 0px; }
+  .food-bag { background-position: -448px 0px; }
+
+  .dog { background-position: -64px -64px; }
+  .elephant { background-position: -128px -64px; }
+  .bird { background-position: -0px -64px; }
+  .pig { background-position: -256px -64px; }
+  .frog { background-position: -194px -64px; }
+  .bomb { background-position: -320px -64px; }
+  .candy2 { background-position: -384px -64px; }
+
+  .animal-food { background-position: 0px -128px; }
+  .wood { background-position: -64px -128px; }
+  .wood1 { background-position: -128px -128px; }
+  .wood2 { background-position: -192px -128px; }
+  .wood3 { background-position: -256px -128px; }
+  .wood4 { background-position: -320px -128px; }
+  .stone { background-position: -384px -128px; }
+
+  .candy { background-position: 0px -192px; }
+  .candyp { background-position: -64px -192px; }
+  .candyg { background-position: -128px -192px; }
+  .candyb { background-position: -192px -192px; }
+  .candyr { background-position: -256px -192px; }
+  .candyy { background-position: -320px -192px; }
+  .candy-box { background-position: -384px -192px; }
+
+  .devil { background-position: 0px -256px; }
+  .devil1 { background-position: -64px -256px; }
+  .devil2 { background-position: -128px -256px; }
+
+  .fireworkh { background-position: 0px -320px; }
+  .fireworkv { background-position: -192px -320px; }
+
+  .elements-image {
+    width:64px;
+    height:64px;
+    object-fit:contain;
+    display:block;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.45));
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 10px 12px;
+      min-height: 64px;
+      height: auto;
+      gap: 10px;
+      flex-wrap: nowrap;
+    }
+    .logo {
+      flex: 1;
+      min-width: 0;
+    }
+    .logo-text { font-size: 1.15rem; }
+    .mobile-menu-btn {
+      display: inline-flex;
+    }
+    .nav-tabs {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      top: calc(100% + 8px);
+      flex-direction: column;
+      gap: 6px;
+      border-radius: 16px;
+      padding: 8px;
+      background: rgba(58, 106, 190, 0.95);
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+      z-index: 120;
+    }
+    .nav-tab {
+      width: 100%;
+      text-align: left;
+      padding: 8px 8px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+    .hero { padding:36px 16px 26px; }
+    main { padding:0 12px 40px; }
+    .card { padding:22px 20px; }
+    .elements-grid { grid-template-columns:1fr; }
+    .element-sprites { min-height:56px; }
+    .sprite { transform:scale(0.85); transform-origin:left center; }
+  }
+
+  /* FOOTER */
+  footer {
+    position:relative; z-index:1;
+    background:rgba(255,255,255,0.72);
+    backdrop-filter:blur(12px);
+    border-top:1px solid rgba(30,60,120,0.2);
+    padding:28px 32px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+  }
+  .footer-inner {
+    max-width:980px; margin:0 auto;
+    display:flex; align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap; gap:16px;
+  }
+  .footer-logo { display:flex; align-items:center; gap:8px; text-decoration:none; }
+  .footer-logo img {
+    width:32px; height:32px;
+    object-fit:cover;
+    display:block;
+  }
+  .footer-logo span {
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800; color:#18325f; font-size:1.1rem;
+  }
+  .social-links { display:flex; gap:10px; }
+  .social-btn {
+    width:38px; height:38px; border-radius:12px;
+    background:rgba(255,255,255,0.92);
+    border:1px solid rgba(24,50,95,0.2);
+    display:flex; align-items:center; justify-content:center;
+    font-size:17px; cursor:pointer;
+    transition:all 0.2s; text-decoration:none; color:#1c3b6f;
+  }
+  .social-btn:hover {
+    background:#ffffff; transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(15,35,75,0.2);
+  }
+  .footer-copy {
+    color:#355582;
+    font-size:0.82rem; font-weight:600;
+    width:100%; text-align:center; margin-top:8px;
+  }
+</style>
 </head>
-<body class="sky-background min-h-screen">
+<body>
+<div id="particles-layer" aria-hidden="true"></div>
 
-  <!-- Header (App Bar) -->
-  <header id="header" class="flex justify-between items-center p-4 bg-transparent fixed top-0 left-0 right-0 z-10 shadow-md">
-    <!-- Logo Text with Gradient -->
-    <div class="flex items-center space-x-4">
-      <!-- Placeholder for Game Logo Image -->
-      <img src="animgelg.png" alt="Game Logo" class="w-12 h-12 object-cover">
-      <!-- Gradient Logo Text -->
-      <h1 class="text-4xl font-bold gradient-text leading-normal">Animgels</h1>
-      
+<!-- NAV -->
+<nav id="topNav" class="sticky top-0 z-[100] flex items-center justify-between gap-2 border-b border-white/35 bg-white/20 px-3 py-2 backdrop-blur-md transition-transform duration-300 md:h-16 md:px-8 md:py-0">
+    <a class="logo min-w-0 flex-1 md:flex-none" href="#">
+    <div class="logo-icon">
+      <img src="animgelg.png" alt="Animgels Logo">
     </div>
-  </header>
+    <span class="logo-text truncate text-[1.15rem] md:text-[1.5rem]">Animgels</span>
+  </a>
+  <button id="mobileMenuBtn" class="mobile-menu-btn md:hidden" aria-label="Open menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+    </svg>
+  </button>
+  <div id="navTabs" class="nav-tabs hidden absolute left-3 right-3 top-full z-[120] mt-2 flex-col gap-2 rounded-2xl border border-white/30 bg-[rgba(58,106,190,0.95)] p-2 shadow-xl md:static md:mt-0 md:flex md:flex-row md:items-center md:gap-1 md:rounded-full md:border-0 md:bg-white/20 md:p-1 md:shadow-none">
+    <button class="nav-tab active" onclick="switchTab('privacy', this)">Privacy Policy</button>
+    <button class="nav-tab" onclick="switchTab('elements', this)">Game Elements</button>
+  </div>
+</nav>
 
-  <!-- Main Content -->
-  <div class="container mx-auto px-4 py-20 pt-28">
-    <div class="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
-      <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Privacy Policy</h1>
+<!-- HERO -->
+<div class="hero">
+<h1 id="heroTitle">Privacy</h1>
+  <p id="heroSub">Here's how we handle your data.</p>
+</div>
 
-      <ul class="space-y-6">
-        <!-- Information We Collect Section -->
-        <li>
-          <h2 class="text-2xl font-semibold text-gray-700">Information We Collect</h2>
-          <p class="text-gray-600">
-            We do not collect any personal information that can identify you.
-          </p>
-          <p class="text-gray-600">
-            We collect information about your interactions with our game.
-          </p>
-        </li>
+<!-- MAIN -->
+<main>
 
-        <!-- How We Use Your Information Section -->
-        <li>
-          <h2 class="text-2xl font-semibold text-gray-700">How We Use Your Information</h2>
-          <p class="text-gray-600">
-            To provide, maintain, balance and improve our game experience.
-          </p>
-        </li>
-
-        <!-- Advertising Section -->
-        <li>
-          <h2 class="text-2xl font-semibold text-gray-700">Advertising</h2>
-          <p class="text-gray-600">
-            There are no forced Ads on our app. All Ads are served by user request.
-          </p>
-          <p class="text-gray-600">
-            We use AdMob by Google to display advertisements in our game. AdMob may collect information about your device and usage to deliver personalized ads. You have the option to opt out of personalized ads. For more information, visit the AdMob <a href="https://policies.google.com/privacy" class="text-blue-500">Privacy Policy</a>.
-          </p>
-        </li>
-
-        <!-- Children Section -->
-        <li>
-          <h2 class="text-2xl font-semibold text-gray-700">Children</h2>
-          <p class="text-gray-600">
-            These services do not address anyone under the age of 13.
-          </p>
-          <p class="text-gray-600">
-            We do not knowingly collect any personal information from anyone under the age of 13. If you believe that we might have any information from or about a child under the age set out below, please contact us.
-          </p>
-          <p class="text-gray-600">
-            In the event that we learn that we have collected personal information from a child under the relevant age, we will delete that information as quickly as possible.
-          </p>
-        </li>
-
-        <!-- Contact Us Section -->
-        <li>
-          <h2 class="text-2xl font-semibold text-gray-700">Contact Us</h2>
-          <p class="text-gray-600">
-            We may update this Privacy Policy from time to time.
-          </p>
-          <p class="text-gray-600">
-            If you have any questions about our privacy policy please contact us at <a href="mailto:support@animgels.com" class="text-blue-500">support@animgels.com</a>.
-          </p>
-        </li>
-      </ul>
+  <!-- PRIVACY -->
+  <div class="section active" id="privacy">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-blue">🔍</div>
+        <h2>Information We Collect</h2>
+      </div>
+      <p>We do not collect any personal information that can identify you. We collect information about your interactions with our game to help us improve your experience.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-green">⚙️</div>
+        <h2>How We Use Your Information</h2>
+      </div>
+      <p>To provide, maintain, balance and improve our game experience. Your data helps us make Animgels more fun for everyone.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-yellow">📢</div>
+        <h2>Advertising</h2>
+      </div>
+      <p>There are no forced ads in our app — all ads are served by user request only.</p>
+      <br>
+      <p>We use AdMob by Google to display advertisements in our game. AdMob may collect information about your device and usage to deliver personalized ads. You have the option to opt out. For more information, visit the <a href="https://policies.google.com/privacy" target="_blank">AdMob Privacy Policy</a>.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-pink">👶</div>
+        <h2>Children</h2>
+      </div>
+      <p>These services do not address anyone under the age of 13. We do not knowingly collect any personal information from anyone under the age of 13.</p>
+      <br>
+      <p>If you believe that we might have any information from or about a child, please contact us. We will delete that information as quickly as possible.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-purple">✉️</div>
+        <h2>Contact Us</h2>
+      </div>
+      <p>We may update this Privacy Policy from time to time. If you have any questions please contact us at <a href="mailto:support@animgels.com">support@animgels.com</a>.</p>
     </div>
   </div>
-
-  <!-- Modern Footer -->
-  <footer class="bg-gray-100 border-t mt-12">
-    <div class="max-w-6xl mx-auto px-4 py-10 md:flex md:justify-between md:items-center text-gray-700">
-      
-      <!-- Logo + Name -->
-      <div class="flex items-center space-x-3 mb-6 md:mb-0">
-        <img src="animgelg.png" alt="Animgels Logo" class="w-10 h-10 object-cover">
-        <span class="font-bold text-lg">Animgels</span>
+  <!-- ELEMENTS -->
+  <div class="section" id="elements">
+ 
+    <div class="category-label">Core Match Pieces</div>
+    <div class="elements-grid">
+      <div class="element-card">
+        <div class="element-sprites">
+          <div class="sprite dog"></div><div class="sprite elephant"></div><div class="sprite bird"></div><div class="sprite pig"></div><div class="sprite frog"></div>
+        </div>
+        <div class="element-name">Animals</div>
+        <div class="element-desc">Basic elements of the game. Combine 4 or 5 animals to create Animgles of the same color.</div>
       </div>
-
-      <!-- Navigation Links -->
-      <ul class="flex flex-col md:flex-row items-start md:items-center gap-4 text-sm">
-        <li>
-          <a href="elements/" class="hover:text-blue-500 transition">Game Elements</a>
-        </li>
-      </ul>
-
-      <!-- Social Links -->
-      <div class="flex gap-4 mt-6 md:mt-0">
-        <a href="https://www.facebook.com/profile.php?id=61575295396061" target="_blank" class="text-gray-600 hover:text-blue-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5 3.657 9.127 8.438 9.878v-6.988H7.898v-2.89h2.54V9.797c0-2.506 1.493-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.462h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33V21.88C18.343 21.127 22 17 22 12z"/>
-          </svg>
-        </a>
-        <a href="https://www.youtube.com/@Animgels" target="_blank" class="text-gray-600 hover:text-red-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19.615 3.184c-1.723-.468-8.494-.468-8.494-.468s-6.77 0-8.494.468C1.354 3.661 1 6.287 1 8.996v6.008c0 2.71.354 5.336 1.627 5.812C4.35 21.284 11.121 21.284 11.121 21.284s6.77 0 8.494-.468C22.646 20.34 23 17.714 23 15.004V8.996c0-2.71-.354-5.336-1.627-5.812zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/>
-          </svg>
-        </a>
-        <a href="https://discord.gg/jRMyF64v6p" target="_blank" class="text-gray-600 hover:text-indigo-500">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
-           </svg>
-        </a>
+      <div class="element-card">
+        <div class="element-sprites">
+          <div class="sprite animgelr"></div><div class="sprite animgelg"></div><div class="sprite animgelb"></div><div class="sprite animgely"></div><div class="sprite animgelp"></div>
+        </div>
+        <div class="element-name">Animgels</div>
+        <div class="element-desc">Unleash powerful attacks. Pink and Green strike in a 3x3 area. Blue and Red clear full lines horizontally or vertically. Yellow cuts through the board in an X-shaped blast.</div>
       </div>
     </div>
 
-    <div class="text-center text-sm text-gray-500 pb-4">
-      &copy; <span id="year"></span> Animgels. All rights reserved.
+    <div class="category-label">Blockers And Board Objects</div>
+    <div class="elements-grid">
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite wood"></div><div class="sprite wood1"></div><div class="sprite wood2"></div><div class="sprite wood3"></div><div class="sprite wood4"></div></div>
+        <div class="element-name">Wood</div>
+        <div class="element-desc">The basic blocker of the game. Unmoveable. Cleared with adjacent matches. Maximum of 5 layers.<ul><li>Level 2</li></ul></div>
+      </div>
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite stone"></div></div>
+        <div class="element-name">Stone</div>
+        <div class="element-desc">Unmoveable. Requires special power hit to be cleared.<ul><li>Level 21</li></ul></div>
+      </div>
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite animal-food"></div></div>
+        <div class="element-name">Animal Food</div>
+        <div class="element-desc">Moveable. Cleared by adjacent hit. Blocks special power.<ul><li>Level 14</li></ul></div>
+      </div>
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite food-bag"></div></div>
+        <div class="element-name">Food Bag</div>
+        <div class="element-desc">Moveable. Cleared by adjacent hit. Creates animal food when destroyed.<ul><li>To be revealed.</li></ul></div>
+      </div>
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite candy"></div><div class="sprite candy2"></div></div>
+        <div class="element-name">Multicolored Candies</div>
+        <div class="element-desc">Moveable blocker. Cleared with adjacent hit from animals. Maximum of 2 layers.<ul><li>Level 21</li></ul></div>
+      </div>
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite candyr"></div><div class="sprite candyg"></div><div class="sprite candyb"></div><div class="sprite candyy"></div><div class="sprite candyp"></div></div>
+        <div class="element-name">Candies</div>
+        <div class="element-desc">Moveable blocker. Colored candies require adjacent hit from animals of the same color, making them a tougher version of multicolored candies.<ul><li>Level 21</li></ul></div>
+      </div>
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite candy-box"></div></div>
+        <div class="element-name">Candy Box</div>
+        <div class="element-desc">Unmoveable. Adjacent hit or special hits will collect a candy. Currently indestructible and permanent.<ul><li>Level 87</li></ul></div>
+      </div>
+      <div class="element-card">
+        <div class="element-sprites"><img class="elements-image" src="cloud.png" alt="Cloud"></div>
+        <div class="element-name">Cloud</div>
+        <div class="element-desc">Clouds are tile blocker. Cleared by a match at the cloud location. Maximum of 3 layers.<ul><li>Level 8</li></ul></div>
+      </div>
+      <div class="element-card">
+        <div class="element-sprites"><img class="elements-image" src="cat-sleep.png" alt="Sleeping Cat"></div>
+        <div class="element-name">Sleeping Cat</div>
+        <div class="element-desc">Sleeping cat is an unmoveable blocker. The cat is triggered after 2 hits and moves to a random location while leaving food on his original location.<ul><li>To be revealed.</li></ul></div>
+      </div>
     </div>
-  </footer>
 
-  <script>
-    // Update year dynamically
-    document.getElementById("year").textContent = new Date().getFullYear();
+    <div class="category-label">Enemies And Hazards</div>
+    <div class="elements-grid">
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite devil"></div><div class="sprite devil1"></div><div class="sprite devil2"></div></div>
+        <div class="element-name">Animvels</div>
+        <div class="element-desc">The Mischievous Animvils are the Animgles special enemies. They are unmoveable. They are cleared with any hit or a swap with an Animgel. Each turn they transform an animal to a blocker (candy, wood, or animal food). Animvles can have up to 3 lives distinguished by their horns.<ul><li>Level 16</li></ul></div>
+      </div>
+    </div>
 
-    // JavaScript to hide header when scrolling down and show it when scrolling up
-    let lastScrollTop = 0;
-    const header = document.getElementById("header");
+    <div class="category-label">Boosters And Objective Pieces</div>
+    <div class="elements-grid">
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite bomb"></div></div>
+        <div class="element-name">Rainbow Bomb</div>
+        <div class="element-desc">Move to activate bombs. Strikes a 5x5 area. Combine with animgels to trigger their powers.</div>
+      </div>
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite fireworkh"></div><div class="sprite fireworkv"></div></div>
+        <div class="element-name">Fireworks</div>
+        <div class="element-desc">Fireworks are helper elements. Moveable. Adjacent hit triggers a vertical or horizontal strike.</div>
+      </div>
+      <div class="element-card">
+        <div class="element-sprites"><div class="sprite airballoon"></div></div>
+        <div class="element-name">Air Balloon</div>
+        <div class="element-desc">Moveable. Indestructible. Air balloons are collectible elements: drop them to the lowest available cell in a column and clear any blocker in that cell.<ul><li>Level 15</li></ul></div>
+      </div>
+    </div>
+  </div>
+</main>
 
-    window.addEventListener("scroll", function() {
-      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (currentScroll > lastScrollTop) {
-        // Scrolling down
-        header.classList.add("hidden-header");
-      } else {
-        // Scrolling up
-        header.classList.remove("hidden-header");
-      }
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll
-    });
-  </script>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+        <a class="footer-logo" href="#">
+      <img src="animgelg.png" alt="Animgels Logo">
+      <span>Animgels</span>
+    </a>
+        <div class="social-links">
+      <a class="social-btn" href="https://www.facebook.com/profile.php?id=61575295396061" target="_blank" title="Facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5 3.657 9.127 8.438 9.878v-6.988H7.898v-2.89h2.54V9.797c0-2.506 1.493-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.462h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33V21.88C18.343 21.127 22 17 22 12z"/>
+        </svg>
+      </a>
+      <a class="social-btn" href="https://www.youtube.com/@Animgels" target="_blank" title="YouTube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19.615 3.184c-1.723-.468-8.494-.468-8.494-.468s-6.77 0-8.494.468C1.354 3.661 1 6.287 1 8.996v6.008c0 2.71.354 5.336 1.627 5.812C4.35 21.284 11.121 21.284 11.121 21.284s6.77 0 8.494-.468C22.646 20.34 23 17.714 23 15.004V8.996c0-2.71-.354-5.336-1.627-5.812zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/>
+        </svg>
+      </a>
+      <a class="social-btn" href="https://discord.gg/jRMyF64v6p" target="_blank" title="Discord" aria-label="Discord">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+        </svg>
+      </a>
+    </div>
+    <div class="footer-copy">&copy; <span id="year"></span> Animgels. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="particles.js"></script>
+<script>
+const heroContent = {
+  privacy:  { title: "Privacy", sub: "Here's how we handle your data." },
+  elements: { title: "Elements", sub: "All units in the Animgels universe." }
+};
+const topNav = document.getElementById('topNav');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navTabs = document.getElementById('navTabs');
+
+function closeMobileMenu() {
+  navTabs.classList.add('hidden');
+  mobileMenuBtn.setAttribute('aria-expanded', 'false');
+}
+
+mobileMenuBtn.addEventListener('click', () => {
+  const willOpen = navTabs.classList.contains('hidden');
+  navTabs.classList.toggle('hidden', !willOpen);
+  mobileMenuBtn.setAttribute('aria-expanded', String(willOpen));
+});
+
+document.addEventListener('click', (event) => {
+  if (!topNav.contains(event.target)) {
+    closeMobileMenu();
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    navTabs.classList.remove('hidden');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+  } else {
+    closeMobileMenu();
+  }
+});
+
+function switchTab(tab, btn) {
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  const c = heroContent[tab];
+document.getElementById('heroTitle').innerHTML = c.title;
+  document.getElementById('heroSub').textContent = c.sub;
+  closeMobileMenu();
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Hide nav when scrolling down, show when scrolling up, and always show near top.
+let lastScrollY = window.scrollY;
+window.addEventListener('scroll', () => {
+  const currentY = window.scrollY;
+  if (currentY <= 24) {
+    topNav.classList.remove('nav-hidden');
+  } else if (currentY > lastScrollY + 4) {
+    topNav.classList.add('nav-hidden');
+  } else if (currentY < lastScrollY - 4) {
+    topNav.classList.remove('nav-hidden');
+  }
+  lastScrollY = currentY;
+}, { passive: true });
+</script>
 
 </body>
 </html>
+
+
