@@ -45,6 +45,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: transform 0.28s ease, background 0.2s ease;
+  }
+  nav.nav-hidden {
+    transform: translateY(calc(-100% - 6px));
   }
   .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
   .logo-icon {
@@ -281,9 +285,27 @@
   }
 
   @media (max-width: 768px) {
-    nav { padding: 0 14px; }
+    nav {
+      padding: 8px 12px;
+      height: auto;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
     .logo-text { font-size: 1.2rem; }
-    .nav-tab { padding: 7px 12px; font-size: 0.78rem; }
+    .nav-tabs {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      padding: 4px;
+    }
+    .nav-tab {
+      width: 100%;
+      text-align: center;
+      padding: 8px 8px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
     .hero { padding:36px 16px 26px; }
     main { padding:0 12px 40px; }
     .card { padding:22px 20px; }
@@ -339,7 +361,7 @@
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="topNav">
     <a class="logo" href="#">
     <div class="logo-icon">
       <img src="animgelg.png" alt="Animgels Logo">
@@ -553,6 +575,21 @@ function switchTab(tab, btn) {
 }
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Hide nav when scrolling down, show when scrolling up, and always show near top.
+const topNav = document.getElementById('topNav');
+let lastScrollY = window.scrollY;
+window.addEventListener('scroll', () => {
+  const currentY = window.scrollY;
+  if (currentY <= 24) {
+    topNav.classList.remove('nav-hidden');
+  } else if (currentY > lastScrollY + 4) {
+    topNav.classList.add('nav-hidden');
+  } else if (currentY < lastScrollY - 4) {
+    topNav.classList.remove('nav-hidden');
+  }
+  lastScrollY = currentY;
+}, { passive: true });
 </script>
 
 </body>
