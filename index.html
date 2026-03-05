@@ -659,6 +659,22 @@ document.getElementById('heroTitle').innerHTML = c.title;
   closeMobileMenu();
 }
 
+function initTabFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const tabFromQuery = params.get('tab');
+  const tabFromHash = window.location.hash.replace('#', '');
+  const targetTab = tabFromQuery || tabFromHash;
+  if (targetTab !== 'elements') return;
+
+  const targetBtn = Array.from(document.querySelectorAll('.nav-tab')).find((btn) =>
+    (btn.getAttribute('onclick') || '').includes("switchTab('elements'")
+  );
+  if (targetBtn) {
+    switchTab('elements', targetBtn);
+  }
+}
+
+initTabFromUrl();
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Hide nav when scrolling down, show when scrolling up, and always show near top.
